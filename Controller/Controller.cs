@@ -1,13 +1,15 @@
 ﻿namespace krypteringAPI.Controller;
 using Microsoft.AspNetCore.Mvc;
 
-[Route("")]
 [ApiController]
+[Route("[controller]/[action]")]
 public class HelloController : ControllerBase
 {
     [HttpGet]
-    public IActionResult Get()
+    public IActionResult Encrypt(string input)
     {
-        return Ok("Hello from the API!");
+        // Reverse the input string
+        var encrypted = new string(input.Reverse().ToArray());
+        return Ok(new { input, encrypted });
     }
 }
