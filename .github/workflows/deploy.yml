@@ -22,7 +22,7 @@ jobs:
 
     
       - name: Build project
-        run: dotnet publish krypteringAPI/krypteringAPI.csproj -c Release -o site
+        run: dotnet publish -c Release -o site
 
     
       - name: Create deployment package
