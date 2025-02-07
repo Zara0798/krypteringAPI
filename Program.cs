@@ -6,7 +6,7 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 // Set the base path for the application
-app.UsePathBase("/hello");
+// app.UsePathBase("/hello");
 
 // Enable routing
 app.UseRouting();
@@ -17,3 +17,4 @@ app.MapControllers();
 app.MapGet("/", () => "Welcome to EnkrypteringAPI!");
 
 app.Run();
+

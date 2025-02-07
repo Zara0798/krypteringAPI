@@ -1,6 +1,4 @@
-﻿namespace krypteringAPI.Controller;
-
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("[controller]/[action]")]
@@ -9,7 +7,6 @@ public class HelloController : ControllerBase
     [HttpGet]
     public IActionResult Encrypt(string input)
     {
-        // Validate input
         if (string.IsNullOrEmpty(input))
         {
             return BadRequest(new
@@ -18,7 +15,6 @@ public class HelloController : ControllerBase
             });
         }
 
-        // Reverse the input string
         var encrypted = new string(input.Reverse().ToArray());
         return Ok(new
         {
@@ -30,7 +26,6 @@ public class HelloController : ControllerBase
     [HttpGet]
     public IActionResult Decrypt(string encrypted)
     {
-        // Validate input
         if (string.IsNullOrEmpty(encrypted))
         {
             return BadRequest(new
@@ -39,7 +34,6 @@ public class HelloController : ControllerBase
             });
         }
 
-        // Reverse the encrypted string to decrypt
         var decrypted = new string(encrypted.Reverse().ToArray());
         return Ok(new
         {
